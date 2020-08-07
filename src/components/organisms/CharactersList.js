@@ -10,7 +10,7 @@ class CharactersList extends React.Component {
   getCharacters() {
     let cardElements = this.props.list;
     console.log(cardElements);
-    return cardElements.map((element, id) => (
+    return cardElements.map((element) => (
       <li key={element.id}>
         <CharacterCard
           image={element.image}
