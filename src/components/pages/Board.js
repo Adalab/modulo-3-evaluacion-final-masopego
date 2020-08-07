@@ -12,6 +12,7 @@ class Board extends React.Component {
     };
 
     this.handleInputValue = this.handleInputValue.bind(this);
+    this.filterCharactersList = this.filterCharactersList.bind(this);
   }
 
   componentDidMount() {
@@ -30,15 +31,28 @@ class Board extends React.Component {
     this.setState({ searchValue: inputValue });
   }
 
+  filterCharactersList() {
+    let characterList = this.state.characters;
+    if (this.state.searchValue !== '') {
+      characterList = characterList.filter((character) =>
+        character.name
+          .toUpperCase()
+          .includes(this.state.searchValue.toUpperCase())
+      );
+      return characterList;
+    }
+    console.log(characterList);
+    return characterList;
+  }
+
   render() {
     return (
       <>
-        <div className="Board">Hola Mundo</div>
         <Filters
           onInputSearch={this.handleInputValue}
           value={this.state.searchValue}
         />
-        <CharactersList list={this.state.characters} />
+        <CharactersList list={this.filterCharactersList()} />
       </>
     );
   }

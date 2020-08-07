@@ -33,7 +33,7 @@ CharactersList.defaultProps = {
   list: [],
 };
 CharactersList.propTypes = {
-  list: PropTypes.array.isRequired,
+  list: PropTypes.array,
 };
 
 export default CharactersList;
