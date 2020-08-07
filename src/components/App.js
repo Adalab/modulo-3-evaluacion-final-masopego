@@ -1,29 +1,19 @@
 import React from 'react';
 import '../App.css';
-import { randMCharacterAPI } from '../services/RMServices';
+import { Route, Switch } from 'react-router-dom';
+import Landing from './pages/Landing';
+import Board from './pages/Board';
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      characters: [],
-    };
-  }
-
-  componentDidMount() {
-    this.fetchCharacters();
-  }
-
-  fetchCharacters() {
-    randMCharacterAPI().then((data) => {
-      this.setState({
-        characters: data,
-      });
-    });
-  }
-
   render() {
-    return <div className="App"></div>;
+    return (
+      <div className="App">
+        <Switch>
+          <Route exact path="/" component={Landing} />
+          <Route path="/rick-and-morty-characters" component={Board} />
+        </Switch>
+      </div>
+    );
   }
 }
 

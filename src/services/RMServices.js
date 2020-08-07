@@ -5,7 +5,6 @@ const randMCharacterAPI = () => {
   return fetch(ENDPOINT)
     .then((response) => response.json())
     .then((data) => {
-      console.log(data.results);
       return data.results;
     });
 };
