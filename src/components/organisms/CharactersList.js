@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import CharacterCard from '../molecules/CharacterCard';
 
 class CharactersList extends React.Component {
@@ -27,5 +28,12 @@ class CharactersList extends React.Component {
     );
   }
 }
+
+CharactersList.defaultProps = {
+  list: [],
+};
+CharactersList.propTypes = {
+  list: PropTypes.array.isRequired,
+};
 
 export default CharactersList;
