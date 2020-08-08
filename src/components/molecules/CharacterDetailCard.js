@@ -5,20 +5,20 @@ class CharacterDetailCard extends React.Component {
   render() {
     const STATUS =
       this.props.status === 'Alive' ? (
-        <i class="fas fa-heart"></i>
+        <i className="fas fa-heart"></i>
       ) : this.props.status === 'Dead' ? (
-        <i class="fas fa-skull-crossbones"></i>
+        <i className="fas fa-skull-crossbones"></i>
       ) : (
-        <i class="fas fa-question"></i>
+        <i className="fas fa-question"></i>
       );
 
     const SPECIES =
       this.props.species === 'Human' ? (
-        <i class="fas fa-child"></i>
+        <i className="fas fa-child"></i>
       ) : this.props.species === 'Alien' ? (
-        <i class="fab fa-reddit-alien"></i>
+        <i className="fab fa-reddit-alien"></i>
       ) : (
-        <i class="fas fa-question"></i>
+        <i className="fas fa-question"></i>
       );
 
     return (

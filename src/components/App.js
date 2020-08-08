@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import Landing from './pages/Landing';
 import Board from './pages/Board';
 import CharacterDetail from './pages/CharacterDetail';
+import NotFound from './pages/NotFound';
 import {
   ROUTE_CHARACTER,
   ROUTE_HOME,
@@ -17,6 +18,7 @@ class App extends React.Component {
           <Route exact path={ROUTE_HOME} component={Landing} />
           <Route path={ROUTE_CHARACTERS} component={Board} />
           <Route path={ROUTE_CHARACTER} component={CharacterDetail} />
+          <Route component={NotFound} />
         </Switch>
       </>
     );

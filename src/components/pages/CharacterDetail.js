@@ -17,6 +17,15 @@ class CharacterDetail extends React.Component {
     this.fetchCharacter();
   }
 
+  componentDidUpdate() {
+    if (
+      this.state.character &&
+      parseInt(this.props.match.params.id) !== this.state.character.id
+    ) {
+      this.fetchCharacter();
+    }
+  }
+
   fetchCharacter() {
     const characterId = parseInt(this.props.match.params.id);
     getCharacter(characterId).then((data) => {
