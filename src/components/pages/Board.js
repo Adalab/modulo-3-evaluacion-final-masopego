@@ -52,6 +52,11 @@ class Board extends React.Component {
           .includes(this.state.searchValue.toUpperCase())
       );
     }
+    characterList.sort((a, b) => {
+      const textA = a.name.toUpperCase();
+      const textB = b.name.toUpperCase();
+      return textA < textB ? -1 : textA > textB ? 1 : 0;
+    });
     return characterList;
   }
 
@@ -59,7 +64,10 @@ class Board extends React.Component {
     const list = this.filterCharactersList();
     if (this.state.isFetching) {
       return (
-        <img src="https://media2.giphy.com/media/i2tLw5ZyikSFdkeGHT/giphy.gif"></img>
+        <img
+          src="https://media2.giphy.com/media/i2tLw5ZyikSFdkeGHT/giphy.gif"
+          alt="Loading"
+        ></img>
       );
     }
     return (
