@@ -3,14 +3,32 @@ import PropTypes from 'prop-types';
 
 class CharacterDetailCard extends React.Component {
   render() {
+    const STATUS =
+      this.props.status === 'Alive' ? (
+        <i class="fas fa-heart"></i>
+      ) : this.props.status === 'Dead' ? (
+        <i class="fas fa-skull-crossbones"></i>
+      ) : (
+        <i class="fas fa-question"></i>
+      );
+
+    const SPECIES =
+      this.props.species === 'Human' ? (
+        <i class="fas fa-child"></i>
+      ) : this.props.species === 'Alien' ? (
+        <i class="fab fa-reddit-alien"></i>
+      ) : (
+        <i class="fas fa-question"></i>
+      );
+
     return (
       <article>
         <img src={this.props.image} alt={this.props.title} />
         <h3>{this.props.title}</h3>
-        <p>{this.props.species}</p>
+        <p>{SPECIES}</p>
         <p>{this.props.planet}</p>
         {this.props.episodes ? <p>{this.props.episodes}</p> : null}
-        <p>{this.props.status}</p>
+        <p>{STATUS}</p>
       </article>
     );
   }
