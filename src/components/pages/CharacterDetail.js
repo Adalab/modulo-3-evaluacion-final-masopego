@@ -31,7 +31,6 @@ class CharacterDetail extends React.Component {
       return 'Personaje no encontrado';
     }
 
-    debugger;
     return (
       <>
         <CharacterDetailCard

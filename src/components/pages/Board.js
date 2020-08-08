@@ -3,12 +3,15 @@ import { getCharacters } from '../../services/RMServices';
 import CharactersList from '../organisms/CharactersList';
 import Filters from '../organisms/Filters';
 
+const EMULATE_LOW_REQUEST = 0;
+
 class Board extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       characters: [],
-      searchValue: '',
+      searchValue: localStorage.getItem('localData') || '',
+      isFetching: false,
     };
 
     this.handleInputValue = this.handleInputValue.bind(this);
@@ -19,11 +22,20 @@ class Board extends React.Component {
     this.fetchCharacters();
   }
 
+  componentDidUpdate() {
+    const userSearchInfo = this.state.searchValue;
+    localStorage.setItem('localData', userSearchInfo);
+  }
+
   fetchCharacters() {
+    this.setState({ isFetching: true });
     getCharacters().then((data) => {
-      this.setState({
-        characters: data,
-      });
+      setTimeout(() => {
+        this.setState({
+          characters: data,
+          isFetching: false,
+        });
+      }, EMULATE_LOW_REQUEST);
     });
   }
 
@@ -44,13 +56,26 @@ class Board extends React.Component {
   }
 
   render() {
+    const list = this.filterCharactersList();
+    if (this.state.isFetching) {
+      return (
+        <img src="https://media2.giphy.com/media/i2tLw5ZyikSFdkeGHT/giphy.gif"></img>
+      );
+    }
     return (
       <>
         <Filters
           onInputSearch={this.handleInputValue}
           value={this.state.searchValue}
         />
-        <CharactersList list={this.filterCharactersList()} />
+        {list.length > 0 ? (
+          <CharactersList list={list} />
+        ) : (
+          <p>
+            No he encontrado resultados para la búsqueda{' '}
+            {this.state.searchValue}
+          </p>
+        )}
       </>
     );
   }

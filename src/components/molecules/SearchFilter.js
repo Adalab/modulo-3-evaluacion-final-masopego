@@ -6,15 +6,19 @@ class SearchFilter extends React.Component {
   constructor(props) {
     super(props);
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSubmit(ev) {
+    ev.preventDefault();
   }
   handleInputChange(ev) {
-    ev.preventDefault();
     this.props.onInputSearch(ev.target.value);
   }
   render() {
     return (
       <>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <label htmlFor="userSearch">
             {' '}
             Buscar
