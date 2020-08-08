@@ -1,16 +1,16 @@
-import React from 'react';
-import { getCharacters } from '../../services/RMServices';
-import CharactersList from '../organisms/CharactersList';
-import Filters from '../organisms/Filters';
+import React from "react";
+import { getCharacters } from "../../services/RMServices";
+import CharactersList from "../organisms/CharactersList";
+import Filters from "../organisms/Filters";
 
-const EMULATE_LOW_REQUEST = 0;
+const EMULATE_LOW_REQUEST = 1000;
 
 class Board extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       characters: [],
-      searchValue: localStorage.getItem('localData') || '',
+      searchValue: localStorage.getItem("localData") || "",
       isFetching: false,
     };
 
@@ -24,7 +24,7 @@ class Board extends React.Component {
 
   componentDidUpdate() {
     const userSearchInfo = this.state.searchValue;
-    localStorage.setItem('localData', userSearchInfo);
+    localStorage.setItem("localData", userSearchInfo);
   }
 
   fetchCharacters() {
@@ -45,7 +45,7 @@ class Board extends React.Component {
 
   filterCharactersList() {
     let characterList = this.state.characters;
-    if (this.state.searchValue !== '') {
+    if (this.state.searchValue !== "") {
       characterList = characterList.filter((character) =>
         character.name
           .toUpperCase()
@@ -64,10 +64,13 @@ class Board extends React.Component {
     const list = this.filterCharactersList();
     if (this.state.isFetching) {
       return (
-        <img
-          src="https://media2.giphy.com/media/i2tLw5ZyikSFdkeGHT/giphy.gif"
-          alt="Loading"
-        ></img>
+        <div className="loading_holder">
+          <img
+            className="loading"
+            src="https://media2.giphy.com/media/i2tLw5ZyikSFdkeGHT/giphy.gif"
+            alt="Loading"
+          ></img>
+        </div>
       );
     }
     return (
@@ -80,7 +83,7 @@ class Board extends React.Component {
           <CharactersList list={list} />
         ) : (
           <p>
-            No he encontrado resultados para la búsqueda{' '}
+            No he encontrado resultados para la búsqueda{" "}
             {this.state.searchValue}
           </p>
         )}

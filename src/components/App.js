@@ -1,25 +1,27 @@
-import React from 'react';
-import '../App.css';
-import { Route, Switch } from 'react-router-dom';
-import Landing from './pages/Landing';
-import Board from './pages/Board';
-import CharacterDetail from './pages/CharacterDetail';
-import NotFound from './pages/NotFound';
+import React from "react";
+import "../App.css";
+import { Route, Switch } from "react-router-dom";
+import Landing from "./pages/Landing/Landing";
+import Board from "./pages/Board";
+import CharacterDetail from "./pages/CharacterDetail";
+import NotFound from "./pages/NotFound";
 import {
   ROUTE_CHARACTER,
   ROUTE_HOME,
   ROUTE_CHARACTERS,
-} from '../utils/constants';
+} from "../utils/constants";
 class App extends React.Component {
   render() {
     return (
       <>
-        <Switch>
-          <Route exact path={ROUTE_HOME} component={Landing} />
-          <Route path={ROUTE_CHARACTERS} component={Board} />
-          <Route path={ROUTE_CHARACTER} component={CharacterDetail} />
-          <Route component={NotFound} />
-        </Switch>
+        <main className="main">
+          <Switch>
+            <Route exact path={ROUTE_HOME} component={Landing} />
+            <Route path={ROUTE_CHARACTERS} component={Board} />
+            <Route path={ROUTE_CHARACTER} component={CharacterDetail} />
+            <Route component={NotFound} />
+          </Switch>
+        </main>
       </>
     );
   }

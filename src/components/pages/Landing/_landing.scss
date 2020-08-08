@@ -1,0 +1,70 @@
+@import "../../../stylesheets/core/_variables.scss";
+@import "../../../stylesheets/core/_mixins.scss";
+
+.main {
+  width: 100%;
+  height: 100vh;
+  background: url("../../../images/universe.jpg");
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: fixed;
+  overflow: scroll;
+  animation: mymove 300s infinite;
+
+  &__plane {
+    position: absolute;
+    top: 0px;
+    right: -20px;
+    transform: rotate(-25deg);
+    width: 800px;
+    animation: float 6s infinite;
+  }
+
+  .layer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .title {
+      z-index: 1000;
+      max-width: 100%;
+    }
+
+    .start {
+      background: lime;
+      padding: 30px;
+      z-index: 1000;
+    }
+  }
+}
+
+@keyframes mymove {
+  50% {
+    background-position: bottom;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: rotate(-20deg) translatey(50px);
+  }
+  50% {
+    transform: rotate(-20deg) translatey(0px);
+  }
+  100% {
+    transform: rotate(-20deg) translatey(50px);
+  }
+}
+
+.layer {
+}
+
+.loading_holder {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
