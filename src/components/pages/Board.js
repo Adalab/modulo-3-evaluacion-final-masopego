@@ -1,5 +1,5 @@
 import React from 'react';
-import { randMCharacterAPI } from '../../services/RMServices';
+import { getCharacters } from '../../services/RMServices';
 import CharactersList from '../organisms/CharactersList';
 import Filters from '../organisms/Filters';
 
@@ -20,7 +20,7 @@ class Board extends React.Component {
   }
 
   fetchCharacters() {
-    randMCharacterAPI().then((data) => {
+    getCharacters().then((data) => {
       this.setState({
         characters: data,
       });
@@ -39,9 +39,7 @@ class Board extends React.Component {
           .toUpperCase()
           .includes(this.state.searchValue.toUpperCase())
       );
-      return characterList;
     }
-    console.log(characterList);
     return characterList;
   }
 

@@ -15,13 +15,12 @@ class CharacterCard extends React.Component {
 
 CharacterCard.defaultProps = {
   image: 'https://via.placeholder.com/150',
-  title: 'Special Character',
-  species: "I'm from a place called universe",
+  species: 'Galactic',
 };
 
 CharacterCard.propTypes = {
-  image: PropTypes.string,
   title: PropTypes.string.isRequired,
+  image: PropTypes.string,
   species: PropTypes.string,
 };
 

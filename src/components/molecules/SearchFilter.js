@@ -8,6 +8,7 @@ class SearchFilter extends React.Component {
     this.handleInputChange = this.handleInputChange.bind(this);
   }
   handleInputChange(ev) {
+    ev.preventDefault();
     this.props.onInputSearch(ev.target.value);
   }
   render() {

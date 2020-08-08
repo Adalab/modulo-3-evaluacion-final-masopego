@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import CharacterCard from '../molecules/CharacterCard';
 
@@ -12,11 +13,13 @@ class CharactersList extends React.Component {
     console.log(cardElements);
     return cardElements.map((element) => (
       <li key={element.id}>
-        <CharacterCard
-          image={element.image}
-          title={element.name}
-          species={element.species}
-        />
+        <Link to={`/character/${element.id}`}>
+          <CharacterCard
+            image={element.image}
+            title={element.name}
+            species={element.species}
+          />
+        </Link>
       </li>
     ));
   }
