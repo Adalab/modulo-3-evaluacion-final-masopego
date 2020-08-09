@@ -2,7 +2,7 @@ import React from "react";
 import "../stylesheets/layout/_app.scss";
 import { Route, Switch } from "react-router-dom";
 import Landing from "./pages/Landing/Landing";
-import Board from "./pages/Board";
+import Board from "./pages/Board/Board";
 import CharacterDetail from "./pages/CharacterDetail";
 import NotFound from "./pages/NotFound/NotFound";
 import {

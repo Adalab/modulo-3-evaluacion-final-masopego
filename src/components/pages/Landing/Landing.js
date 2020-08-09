@@ -9,13 +9,13 @@ class Landing extends React.Component {
   render() {
     return (
       <>
-        <main className="layer">
+        <section className="layer">
           <img className="title" src={Logo} alt="Rick and Morty" />
           <img className="main__plane" src={Plane} alt="Airplane" />
           <Link className="start" to="/rick-and-morty-characters">
             <Button title="Comenzar"></Button>
           </Link>
-        </main>
+        </section>
       </>
     );
   }

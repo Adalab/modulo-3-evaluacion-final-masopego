@@ -1,7 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import CharacterCard from '../molecules/CharacterCard';
+import React from "react";
+import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
+import CharacterCard from "../../molecules/CharacterCard/CharacterCard";
+import "./_charactersList.scss";
 
 class CharactersList extends React.Component {
   constructor(props) {
@@ -12,7 +13,7 @@ class CharactersList extends React.Component {
     let cardElements = this.props.list;
     console.log(cardElements);
     return cardElements.map((element) => (
-      <li key={element.id}>
+      <li key={element.id} className="characters__list--element">
         <Link to={`/character/${element.id}`}>
           <CharacterCard
             image={element.image}
@@ -26,7 +27,7 @@ class CharactersList extends React.Component {
   render() {
     return (
       <>
-        <ul>{this.getCharacters()}</ul>
+        <ul className="characters__list">{this.getCharacters()}</ul>
       </>
     );
   }

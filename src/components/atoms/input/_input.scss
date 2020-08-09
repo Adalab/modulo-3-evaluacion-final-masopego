@@ -1,0 +1,44 @@
+@import "../../../stylesheets/core/_variables.scss";
+@import "../../../stylesheets/core/_mixins.scss";
+
+.input {
+  width: 300px;
+  height: 30px;
+  margin: 30px auto;
+  padding: 20px;
+  border: none;
+  background: none;
+  color: white;
+  text-transform: uppercase;
+  font-family: sans-serif;
+  letter-spacing: 5px;
+  position: relative;
+
+  &:after {
+    height: 3px;
+    background: $color-secondary;
+    width: 100%;
+    content: "";
+    position: absolute;
+    bottom: -5px;
+  }
+
+  &:focus {
+    color: white;
+  }
+}
+
+.input__label {
+  position: relative;
+  margin: 0 20px;
+  &:after {
+    height: 3px;
+    background: #1f8e45;
+    width: 100%;
+    content: "";
+    position: absolute;
+    bottom: -12px;
+    left: 0;
+    box-shadow: $color-shadow-secondary;
+  }
+}

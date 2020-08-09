@@ -1,0 +1,10 @@
+@import "../../../stylesheets/core/_variables.scss";
+@import "../../../stylesheets/core/_mixins.scss";
+
+.board {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

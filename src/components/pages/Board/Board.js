@@ -1,8 +1,9 @@
 import React from "react";
-import { getCharacters } from "../../services/RMServices";
-import CharactersList from "../organisms/CharactersList";
-import Filters from "../organisms/Filters";
-import Loader from "../atoms/loader/loader.js";
+import { getCharacters } from "../../../services/RMServices";
+import CharactersList from "../../organisms/CharactersList/CharactersList.js";
+import Filters from "../../organisms/Filters";
+import Loader from "../../atoms/loader/loader.js";
+import "./_board.scss";
 
 const EMULATE_LOW_REQUEST = 2500;
 
@@ -67,7 +68,7 @@ class Board extends React.Component {
       return <Loader />;
     }
     return (
-      <>
+      <section className="board">
         <Filters
           onInputSearch={this.handleInputValue}
           value={this.state.searchValue}
@@ -80,7 +81,7 @@ class Board extends React.Component {
             {this.state.searchValue}
           </p>
         )}
-      </>
+      </section>
     );
   }
 }

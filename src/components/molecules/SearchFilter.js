@@ -19,18 +19,14 @@ class SearchFilter extends React.Component {
     return (
       <>
         <form onSubmit={this.handleSubmit}>
-          <label htmlFor="userSearch">
-            {" "}
-            Buscar
-            <Input
-              kind="text"
-              name="userSearch"
-              id="userSearch"
-              placeholder="Búsqueda"
-              value={this.props.value}
-              handleInputChange={this.handleInputChange}
-            />
-          </label>
+          <Input
+            kind="text"
+            name="userSearch"
+            id="userSearch"
+            placeholder="Búsqueda"
+            value={this.props.value}
+            handleInputChange={this.handleInputChange}
+          />
         </form>
       </>
     );

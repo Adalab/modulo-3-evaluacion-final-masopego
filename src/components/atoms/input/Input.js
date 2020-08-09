@@ -1,16 +1,23 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "./_input.scss";
 
 const Input = (props) => {
   return (
-    <input
-      type={props.kind}
-      name={props.name}
-      value={props.value}
-      id={props.id}
-      placeholder={props.placeholder}
-      onChange={props.handleInputChange}
-    />
+    <>
+      <label className="input__label" htmlFor={props.id}>
+        {" "}
+        <input
+          className="input"
+          type={props.kind}
+          name={props.name}
+          value={props.value}
+          id={props.id}
+          placeholder={props.placeholder}
+          onChange={props.handleInputChange}
+        />
+      </label>
+    </>
   );
 };
 
