@@ -1,8 +1,11 @@
-import React from 'react';
-import { getCharacter } from '../../services/RMServices';
-import CharacterDetailCard from '../molecules/CharacterDetailCard';
-import { Link } from 'react-router-dom';
-import { ROUTE_CHARACTERS } from '../../utils/constants';
+import React from "react";
+import { getCharacter } from "../../../services/RMServices";
+import CharacterDetailCard from "../../molecules/CharacterDetailCard/CharacterDetailCard";
+import { Link } from "react-router-dom";
+import { ROUTE_CHARACTERS } from "../../../utils/constants";
+import "./_characterDetail.scss";
+import Button from "../../atoms/button/button.js";
+
 class CharacterDetail extends React.Component {
   constructor(props) {
     super(props);
@@ -37,11 +40,11 @@ class CharacterDetail extends React.Component {
     const element = this.state.character;
 
     if (!element) {
-      return 'Personaje no encontrado';
+      return "Personaje no encontrado";
     }
 
     return (
-      <>
+      <section className="character-detail">
         <CharacterDetailCard
           image={element.image}
           title={element.name}
@@ -50,8 +53,10 @@ class CharacterDetail extends React.Component {
           episodes={element.episode.length}
           status={element.status}
         />
-        <Link to={ROUTE_CHARACTERS}>Volver</Link>
-      </>
+        <Link to={ROUTE_CHARACTERS}>
+          <Button size="large" title="Buscar otros personajes"></Button>
+        </Link>
+      </section>
     );
   }
 }

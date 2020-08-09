@@ -1,0 +1,84 @@
+@import "../../../stylesheets/core/_variables.scss";
+@import "../../../stylesheets/core/_mixins.scss";
+
+.character__card {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 70px;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  border-radius: 3%;
+
+  @include tablet {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 20px;
+  }
+
+  &--left {
+    grid-column: 1/2;
+    align-self: right;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &--avatar {
+    border-radius: 100%;
+    max-width: 200px;
+    margin: 10px;
+    border: 2px solid white;
+    box-shadow: 0px 0px 37px -16px rgba(255, 255, 255, 1);
+    border: 2px solid white;
+  }
+
+  &--right {
+    grid-column: 2/3;
+    height: 200px;
+  }
+  &--title {
+    text-align: center;
+    align-self: start;
+    font-size: 40px;
+    padding-bottom: 25px;
+  }
+
+  &--planet {
+    text-align: center;
+    font-size: 20px;
+    padding-bottom: 25px;
+  }
+
+  &--icons {
+    display: flex;
+    justify-content: space-evenly;
+
+    .icon-wrapper {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
+
+      .icon {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        background: $color-secondary;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        img {
+          width: 60%;
+        }
+      }
+      .legend {
+        text-transform: uppercase;
+        margin-top: 10px;
+      }
+    }
+  }
+}

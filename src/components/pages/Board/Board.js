@@ -76,9 +76,10 @@ class Board extends React.Component {
         {list.length > 0 ? (
           <CharactersList list={list} />
         ) : (
-          <p>
-            No he encontrado resultados para la búsqueda{" "}
-            {this.state.searchValue}
+          <p className="not-results">
+            En este universo no hemos encontrado un personaje llamado{" "}
+            {this.state.searchValue.toUpperCase()}.{" "}
+            <span>¡Prueba de nuevo! </span>
           </p>
         )}
       </section>
