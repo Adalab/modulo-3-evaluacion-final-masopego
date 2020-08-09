@@ -2,8 +2,9 @@ import React from "react";
 import { getCharacters } from "../../services/RMServices";
 import CharactersList from "../organisms/CharactersList";
 import Filters from "../organisms/Filters";
+import Loader from "../atoms/loader/loader.js";
 
-const EMULATE_LOW_REQUEST = 1000;
+const EMULATE_LOW_REQUEST = 2500;
 
 class Board extends React.Component {
   constructor(props) {
@@ -63,15 +64,7 @@ class Board extends React.Component {
   render() {
     const list = this.filterCharactersList();
     if (this.state.isFetching) {
-      return (
-        <div className="loading_holder">
-          <img
-            className="loading"
-            src="https://media2.giphy.com/media/i2tLw5ZyikSFdkeGHT/giphy.gif"
-            alt="Loading"
-          ></img>
-        </div>
-      );
+      return <Loader />;
     }
     return (
       <>

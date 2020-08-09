@@ -1,6 +1,6 @@
-import React from 'react';
-import Input from '../atoms/Input';
-import PropTypes from 'prop-types';
+import React from "react";
+import Input from "../atoms/input/Input";
+import PropTypes from "prop-types";
 
 class SearchFilter extends React.Component {
   constructor(props) {
@@ -20,7 +20,7 @@ class SearchFilter extends React.Component {
       <>
         <form onSubmit={this.handleSubmit}>
           <label htmlFor="userSearch">
-            {' '}
+            {" "}
             Buscar
             <Input
               kind="text"

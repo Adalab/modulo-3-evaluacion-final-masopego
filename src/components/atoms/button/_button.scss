@@ -1,0 +1,28 @@
+@import "../../../stylesheets/core/_variables.scss";
+@import "../../../stylesheets/core/_mixins.scss";
+
+.btn {
+  border: none;
+  border-radius: 20px;
+  text-align: center;
+  font-family: sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: bold;
+
+  &__color--primary {
+    background: $color-primary;
+    box-shadow: $color-shadow;
+    color: $color-light;
+  }
+
+  &__size--medium {
+    width: 200px;
+    padding: 15px 30px;
+  }
+
+  &__size--large {
+    width: 300px;
+    padding: 5px;
+  }
+}
