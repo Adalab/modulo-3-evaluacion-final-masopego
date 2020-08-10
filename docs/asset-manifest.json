@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "./static/css/main.664b1b77.chunk.css",
-    "main.js": "./static/js/main.63d1db75.chunk.js",
-    "main.js.map": "./static/js/main.63d1db75.chunk.js.map",
+    "main.css": "./static/css/main.942213c4.chunk.css",
+    "main.js": "./static/js/main.749abd18.chunk.js",
+    "main.js.map": "./static/js/main.749abd18.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.2b8e63ac.js",
     "runtime-main.js.map": "./static/js/runtime-main.2b8e63ac.js.map",
     "static/js/2.0bd33886.chunk.js": "./static/js/2.0bd33886.chunk.js",
     "static/js/2.0bd33886.chunk.js.map": "./static/js/2.0bd33886.chunk.js.map",
     "index.html": "./index.html",
-    "precache-manifest.92402ab64187a110de6e21e1970a1ef5.js": "./precache-manifest.92402ab64187a110de6e21e1970a1ef5.js",
+    "precache-manifest.1398cd554c170cd50ab699cc8a6d2b08.js": "./precache-manifest.1398cd554c170cd50ab699cc8a6d2b08.js",
     "service-worker.js": "./service-worker.js",
-    "static/css/main.664b1b77.chunk.css.map": "./static/css/main.664b1b77.chunk.css.map",
+    "static/css/main.942213c4.chunk.css.map": "./static/css/main.942213c4.chunk.css.map",
     "static/js/2.0bd33886.chunk.js.LICENSE.txt": "./static/js/2.0bd33886.chunk.js.LICENSE.txt",
     "static/media/Rick_and_Morty_-_logo.png": "./static/media/Rick_and_Morty_-_logo.75509f2e.png",
     "static/media/alien.svg": "./static/media/alien.3c9d84f7.svg",
@@ -24,7 +24,7 @@
   "entrypoints": [
     "static/js/runtime-main.2b8e63ac.js",
     "static/js/2.0bd33886.chunk.js",
-    "static/css/main.664b1b77.chunk.css",
-    "static/js/main.63d1db75.chunk.js"
+    "static/css/main.942213c4.chunk.css",
+    "static/js/main.749abd18.chunk.js"
   ]
 }

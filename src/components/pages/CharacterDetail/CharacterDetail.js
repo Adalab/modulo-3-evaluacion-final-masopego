@@ -71,8 +71,8 @@ class CharacterDetail extends React.Component {
           status={element.status}
         />
         <ul className="character__detail--navigation">
-          {this.state.previousCharacter ? (
-            <li>
+          <li>
+            {this.state.previousCharacter ? (
               <Link
                 to={`/character/${characterId - 1}`}
                 className="navigation--left"
@@ -93,10 +93,10 @@ class CharacterDetail extends React.Component {
                   color="tertiary"
                 />
               </Link>
-            </li>
-          ) : null}
-          {this.state.nextCharacter ? (
-            <li>
+            ) : null}
+          </li>
+          <li>
+            {this.state.nextCharacter ? (
               <Link
                 to={`/character/${characterId + 1}`}
                 className="navigation--right"
@@ -116,8 +116,8 @@ class CharacterDetail extends React.Component {
                   </p>
                 </div>
               </Link>
-            </li>
-          ) : null}
+            ) : null}
+          </li>
         </ul>
         <Link to={ROUTE_CHARACTERS}>
           <Button size="large" title="Buscar otros personajes"></Button>
