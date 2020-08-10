@@ -25,6 +25,12 @@
     }
   }
 
+  &__color--secondary {
+    background-color: $color-secondary;
+    color: $color-light;
+    box-shadow: 0px 0px 40px 3px rgba(230, 255, 0, 1);
+  }
+
   &__size--medium {
     width: 200px;
     padding: 15px 30px;
@@ -33,6 +39,12 @@
   &__size--large {
     width: 350px;
     padding: 5px;
+  }
+
+  &__size--small {
+    width: 100px;
+    height: 25px;
+    padding: 3px;
   }
 }
 

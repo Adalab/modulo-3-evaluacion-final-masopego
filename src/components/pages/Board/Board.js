@@ -1,7 +1,7 @@
 import React from "react";
 import { getCharacters } from "../../../services/RMServices";
 import CharactersList from "../../organisms/CharactersList/CharactersList.js";
-import Filters from "../../organisms/Filters";
+import Filters from "../../organisms/Filters/Filters";
 import Loader from "../../atoms/loader/loader.js";
 import "./_board.scss";
 
@@ -18,6 +18,7 @@ class Board extends React.Component {
 
     this.handleInputValue = this.handleInputValue.bind(this);
     this.filterCharactersList = this.filterCharactersList.bind(this);
+    this.resetSearch = this.resetSearch.bind(this);
   }
 
   componentDidMount() {
@@ -43,6 +44,10 @@ class Board extends React.Component {
 
   handleInputValue(inputValue) {
     this.setState({ searchValue: inputValue });
+  }
+
+  resetSearch() {
+    return this.setState({ searchValue: "" });
   }
 
   filterCharactersList() {
@@ -72,6 +77,7 @@ class Board extends React.Component {
         <Filters
           onInputSearch={this.handleInputValue}
           value={this.state.searchValue}
+          resetSearch={this.resetSearch}
         />
         {list.length > 0 ? (
           <CharactersList list={list} />

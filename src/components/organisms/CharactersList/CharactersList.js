@@ -11,7 +11,6 @@ class CharactersList extends React.Component {
   }
   getCharacters() {
     let cardElements = this.props.list;
-    console.log(cardElements);
     return cardElements.map((element) => (
       <li key={element.id} className="characters__list--element">
         <Link to={`/character/${element.id}`}>
