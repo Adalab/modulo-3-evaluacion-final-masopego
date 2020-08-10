@@ -10,9 +10,49 @@
   align-items: center;
 
   &--navigation {
-    width: 300px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin-bottom: 120px;
+
+    li {
+      padding: 0 20px;
+    }
+    & .navigation--left {
+      width: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    & .navigation--right {
+      display: flex;
+      width: 300px;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    & .image--preview {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      & img {
+        width: 45px;
+        height: 45px;
+        border-radius: 100%;
+        border: 1px solid $color-light;
+        margin: 10px;
+        order: 2;
+      }
+    }
+
+    & .text--preview {
+      color: $color-light;
+      font-size: $font-small;
+      order: 3;
+    }
+    & .order-01 {
+      order: 1;
+    }
   }
 }

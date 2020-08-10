@@ -6,18 +6,23 @@ import { ROUTE_CHARACTERS } from "../../../utils/constants";
 import "./_characterDetail.scss";
 import Button from "../../atoms/button/button.js";
 import NotFound from "../NotFound/NotFound.js";
+import Loader from "../../atoms/loader/loader.js";
 
 class CharacterDetail extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       character: null,
+      isFetching: false,
+      nextCharacter: null,
+      previousCharacter: null,
     };
 
     this.fetchCharacter = this.fetchCharacter.bind(this);
   }
 
   componentDidMount() {
+    this.setState({ isFetching: true });
     this.fetchCharacter();
   }
 
@@ -33,14 +38,24 @@ class CharacterDetail extends React.Component {
   fetchCharacter() {
     const characterId = parseInt(this.props.match.params.id);
     getCharacter(characterId).then((data) => {
-      this.setState({ character: data });
+      this.setState({ character: data, isFetching: false });
+    });
+    getCharacter(characterId + 1).then((data) => {
+      this.setState({ nextCharacter: data });
+    });
+    getCharacter(characterId - 1).then((data) => {
+      this.setState({ previousCharacter: data });
     });
   }
 
   render() {
     const characterId = parseInt(this.props.match.params.id);
     const element = this.state.character;
+    const isFetching = this.state.isFetching;
 
+    if (isFetching) {
+      return <Loader />;
+    }
     if (!element) {
       return <NotFound />;
     }
@@ -56,24 +71,53 @@ class CharacterDetail extends React.Component {
           status={element.status}
         />
         <ul className="character__detail--navigation">
-          <li>
-            <Link to={`/character/${characterId - 1}`}>
-              <Button
-                title={<i class="fas fa-arrow-left"></i>}
-                size="radius"
-                color="tertiary"
-              />
-            </Link>
-          </li>
-          <li>
-            <Link to={`/character/${characterId + 1}`}>
-              <Button
-                title={<i class="fas fa-arrow-right"></i>}
-                size="radius"
-                color="tertiary"
-              />
-            </Link>
-          </li>
+          {this.state.previousCharacter ? (
+            <li>
+              <Link
+                to={`/character/${characterId - 1}`}
+                className="navigation--left"
+              >
+                <div className="image--preview">
+                  <img
+                    src={this.state.previousCharacter.image}
+                    alt="Previous Character"
+                  />
+                  <p className="text--preview order-01">
+                    {this.state.previousCharacter.name}
+                  </p>
+                </div>
+
+                <Button
+                  title={<i className="fas fa-arrow-left"></i>}
+                  size="radius"
+                  color="tertiary"
+                />
+              </Link>
+            </li>
+          ) : null}
+          {this.state.nextCharacter ? (
+            <li>
+              <Link
+                to={`/character/${characterId + 1}`}
+                className="navigation--right"
+              >
+                <Button
+                  title={<i className="fas fa-arrow-right"></i>}
+                  size="radius"
+                  color="tertiary"
+                />
+                <div className="image--preview">
+                  <img
+                    src={this.state.nextCharacter.image}
+                    alt="Next Character"
+                  />
+                  <p className="text--preview">
+                    {this.state.nextCharacter.name}
+                  </p>
+                </div>
+              </Link>
+            </li>
+          ) : null}
         </ul>
         <Link to={ROUTE_CHARACTERS}>
           <Button size="large" title="Buscar otros personajes"></Button>
