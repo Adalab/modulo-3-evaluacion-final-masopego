@@ -3,6 +3,7 @@ import { getCharacters } from "../../../services/RMServices";
 import CharactersList from "../../organisms/CharactersList/CharactersList.js";
 import Filters from "../../organisms/Filters/Filters";
 import Loader from "../../atoms/loader/loader.js";
+import Footer from "../../organisms/Footer/Footer.js";
 import "./_board.scss";
 
 const EMULATE_LOW_REQUEST = 2500;
@@ -73,22 +74,25 @@ class Board extends React.Component {
       return <Loader />;
     }
     return (
-      <section className="board">
-        <Filters
-          onInputSearch={this.handleInputValue}
-          value={this.state.searchValue}
-          resetSearch={this.resetSearch}
-        />
-        {list.length > 0 ? (
-          <CharactersList list={list} />
-        ) : (
-          <p className="not-results">
-            En este universo no hemos encontrado un personaje llamado{" "}
-            {this.state.searchValue.toUpperCase()}.{" "}
-            <span>¡Prueba de nuevo! </span>
-          </p>
-        )}
-      </section>
+      <>
+        <section className="board">
+          <Filters
+            onInputSearch={this.handleInputValue}
+            value={this.state.searchValue}
+            resetSearch={this.resetSearch}
+          />
+          {list.length > 0 ? (
+            <CharactersList list={list} />
+          ) : (
+            <p className="not-results">
+              En este universo no hemos encontrado un personaje llamado{" "}
+              {this.state.searchValue.toUpperCase()}.{" "}
+              <span>¡Prueba de nuevo! </span>
+            </p>
+          )}
+        </section>
+        <Footer />
+      </>
     );
   }
 }

@@ -1,0 +1,57 @@
+@import "../../../stylesheets/core/_variables.scss";
+@import "../../../stylesheets/core/_mixins.scss";
+
+.footer {
+  width: 100%;
+  padding: 30px;
+  position: relative;
+
+  @include tablet {
+    padding: 30px 45px;
+  }
+
+  @include display {
+    padding: 30px 60px;
+  }
+
+  &:before {
+    height: 3px;
+    background: $color-secondary;
+    box-shadow: $color-shadow-secondary;
+    width: 100%;
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    margin-top: 30px;
+  }
+
+  & .wrapper {
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    width: 100px;
+
+    & img {
+      width: 100%;
+    }
+  }
+
+  &__copy {
+    & h5 {
+      font-size: $font-small;
+      color: $color-light;
+      font-family: $font-primary;
+      transition: color 0.5s linear;
+
+      &:hover {
+        color: $color-primary;
+      }
+    }
+  }
+}
