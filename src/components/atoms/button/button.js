@@ -20,8 +20,8 @@ Button.defaultProps = {
 
 Button.propTypes = {
   title: PropTypes.string.isRequired,
-  size: PropTypes.oneOf(["large", "medium", "small"]),
-  color: PropTypes.oneOf(["primary", "secondary"]),
+  size: PropTypes.oneOf(["large", "medium", "small", "radius"]),
+  color: PropTypes.oneOf(["primary", "secondary", "tertiary"]),
 };
 
 export default Button;

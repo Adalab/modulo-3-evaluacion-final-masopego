@@ -1,22 +1,30 @@
 {
   "files": {
-    "main.css": "./static/css/main.5facb584.chunk.css",
-    "main.js": "./static/js/main.7be8f135.chunk.js",
-    "main.js.map": "./static/js/main.7be8f135.chunk.js.map",
+    "main.css": "./static/css/main.a86d15fc.chunk.css",
+    "main.js": "./static/js/main.6f735dc5.chunk.js",
+    "main.js.map": "./static/js/main.6f735dc5.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.2b8e63ac.js",
     "runtime-main.js.map": "./static/js/runtime-main.2b8e63ac.js.map",
-    "static/js/2.d8eea78c.chunk.js": "./static/js/2.d8eea78c.chunk.js",
-    "static/js/2.d8eea78c.chunk.js.map": "./static/js/2.d8eea78c.chunk.js.map",
+    "static/js/2.0bd33886.chunk.js": "./static/js/2.0bd33886.chunk.js",
+    "static/js/2.0bd33886.chunk.js.map": "./static/js/2.0bd33886.chunk.js.map",
     "index.html": "./index.html",
-    "precache-manifest.99a81e9eb6c859536aade66ff464829b.js": "./precache-manifest.99a81e9eb6c859536aade66ff464829b.js",
+    "precache-manifest.61614b1fa02ea810860400450a86aeb4.js": "./precache-manifest.61614b1fa02ea810860400450a86aeb4.js",
     "service-worker.js": "./service-worker.js",
-    "static/css/main.5facb584.chunk.css.map": "./static/css/main.5facb584.chunk.css.map",
-    "static/js/2.d8eea78c.chunk.js.LICENSE.txt": "./static/js/2.d8eea78c.chunk.js.LICENSE.txt"
+    "static/css/main.a86d15fc.chunk.css.map": "./static/css/main.a86d15fc.chunk.css.map",
+    "static/js/2.0bd33886.chunk.js.LICENSE.txt": "./static/js/2.0bd33886.chunk.js.LICENSE.txt",
+    "static/media/Rick_and_Morty_-_logo.png": "./static/media/Rick_and_Morty_-_logo.75509f2e.png",
+    "static/media/alien.svg": "./static/media/alien.3c9d84f7.svg",
+    "static/media/bones.svg": "./static/media/bones.b69684dc.svg",
+    "static/media/heart.svg": "./static/media/heart.c1354790.svg",
+    "static/media/images_nave.png": "./static/media/images_nave.549c1d9f.png",
+    "static/media/question.svg": "./static/media/question.2fd68a21.svg",
+    "static/media/rick.png": "./static/media/rick.8127219c.png",
+    "static/media/_app.scss": "./static/media/universe.d2db72ac.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.2b8e63ac.js",
-    "static/js/2.d8eea78c.chunk.js",
-    "static/css/main.5facb584.chunk.css",
-    "static/js/main.7be8f135.chunk.js"
+    "static/js/2.0bd33886.chunk.js",
+    "static/css/main.a86d15fc.chunk.css",
+    "static/js/main.6f735dc5.chunk.js"
   ]
 }

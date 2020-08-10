@@ -1,11 +1,18 @@
 @import "../../../stylesheets/core/_variables.scss";
 @import "../../../stylesheets/core/_mixins.scss";
 
-.character-detail {
+.character__detail {
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  &--navigation {
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 120px;
+  }
 }

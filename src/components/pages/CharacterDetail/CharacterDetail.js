@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { ROUTE_CHARACTERS } from "../../../utils/constants";
 import "./_characterDetail.scss";
 import Button from "../../atoms/button/button.js";
+import NotFound from "../NotFound/NotFound.js";
 
 class CharacterDetail extends React.Component {
   constructor(props) {
@@ -37,14 +38,15 @@ class CharacterDetail extends React.Component {
   }
 
   render() {
+    const characterId = parseInt(this.props.match.params.id);
     const element = this.state.character;
 
     if (!element) {
-      return "Personaje no encontrado";
+      return <NotFound />;
     }
 
     return (
-      <section className="character-detail">
+      <section className="character__detail">
         <CharacterDetailCard
           image={element.image}
           title={element.name}
@@ -53,6 +55,26 @@ class CharacterDetail extends React.Component {
           episodes={element.episode.length}
           status={element.status}
         />
+        <ul className="character__detail--navigation">
+          <li>
+            <Link to={`/character/${characterId - 1}`}>
+              <Button
+                title={<i class="fas fa-arrow-left"></i>}
+                size="radius"
+                color="tertiary"
+              />
+            </Link>
+          </li>
+          <li>
+            <Link to={`/character/${characterId + 1}`}>
+              <Button
+                title={<i class="fas fa-arrow-right"></i>}
+                size="radius"
+                color="tertiary"
+              />
+            </Link>
+          </li>
+        </ul>
         <Link to={ROUTE_CHARACTERS}>
           <Button size="large" title="Buscar otros personajes"></Button>
         </Link>
