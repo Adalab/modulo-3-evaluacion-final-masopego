@@ -2,40 +2,29 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./_characterDetailCard.scss";
 import rick from "../../../images/rick.png";
+import heart from "../../../images/heart.svg";
+import bones from "../../../images/bones.svg";
+import alien from "../../../images/alien.svg";
+import question from "../../../images/question.svg";
 
 class CharacterDetailCard extends React.Component {
   render() {
     const STATUS =
       this.props.status === "Alive" ? (
-        <img
-          src="https://image.flaticon.com/icons/svg/1839/1839377.svg"
-          alt="Alive"
-        />
+        <img src={heart} alt="Alive" />
       ) : this.props.status === "Dead" ? (
-        <img
-          src="https://image.flaticon.com/icons/svg/855/855016.svg"
-          alt="Dead"
-        />
+        <img src={bones} alt="Dead" />
       ) : (
-        <img
-          src="https://image.flaticon.com/icons/svg/788/788893.svg"
-          alt="Known"
-        />
+        <img src={question} alt="Known" />
       );
 
     const SPECIES =
       this.props.species === "Human" ? (
         <img src={rick} alt="Human" />
       ) : this.props.species === "Alien" ? (
-        <img
-          src="https://image.flaticon.com/icons/svg/777/777009.svg"
-          alt="Alien"
-        />
+        <img src={alien} alt="Alien" />
       ) : (
-        <img
-          src="https://image.flaticon.com/icons/svg/788/788893.svg"
-          alt="Unknown"
-        />
+        <img src={question} alt="Unknown" />
       );
 
     return (

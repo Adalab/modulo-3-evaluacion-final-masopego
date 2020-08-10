@@ -8,9 +8,9 @@
   padding: 20px;
   border: none;
   background: none;
-  color: white;
+  color: $color-light;
   text-transform: uppercase;
-  font-family: sans-serif;
+  font-family: $font-primary;
   letter-spacing: 5px;
   position: relative;
 
@@ -24,7 +24,7 @@
   }
 
   &:focus {
-    color: white;
+    color: $color-light;
   }
 }
 
@@ -33,7 +33,7 @@
   margin: 0 20px;
   &:after {
     height: 3px;
-    background: #1f8e45;
+    background: $color-secondary;
     width: 100%;
     content: "";
     position: absolute;

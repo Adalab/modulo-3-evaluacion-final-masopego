@@ -8,9 +8,9 @@
   align-items: center;
 
   &--number {
-    font-size: 150px;
+    font-size: $font-extra-big;
     color: $color-light;
-
+    font-family: $font-primary;
     & span {
       background: url("https://media2.giphy.com/media/i2tLw5ZyikSFdkeGHT/giphy.gif");
       background-size: 100%;
@@ -23,8 +23,9 @@
   &--text {
     max-width: 300px;
     color: $color-light;
-    font-size: 32px;
+    font-size: $font-medium;
     text-align: center;
     padding-bottom: 80px;
+    font-family: $font-secondary;
   }
 }

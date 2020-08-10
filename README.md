@@ -1,66 +1,41 @@
 ## Rick and Morty Search 🛸 🛸 by [masopego](https://masopego.es/)
 
-In the project directory, you can run:
+En este proyecto podrás encontrar una SPA desarrollada en react. La web contiene un listado de personajes de la serie _Rick and Morty_. Además de un filtro de personajes y una _card_ para ver más detalles de cada uno de los personajes.
 
-### `npm start`
+#### Elementos adicionales:
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Landing _Rick and Morty_
+- Loading page
+- 404 page
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+#### Requisitos de la web:
 
-### `npm test`
+### Listado de personajes
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Utilizar el servicio [https://rickandmortyapi.com/documentation/#get-all-characters](https://rickandmortyapi.com/documentation/#get-all-characters) que nos devuelve información sobre los primeros 20 personajes de la serie. Sobre cada uno, vamos a pintar:
 
-### `npm run build`
+- Foto
+- Nombre
+- Especie
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Si este servicio no funcionase (porque nos hubieran baneado) tenemos una url de backup: [https://raw.githubusercontent.com/Adalab/rick-y-morty/master/data/rick-y-morty.json](https://raw.githubusercontent.com/Adalab/rick-y-morty/master/data/rick-y-morty.json)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### Filtrado de personajes
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Buscar a los personajes con nombre. Para eso, añadimos un **input** a la interfaz, de forma que al ir escribiendo un nombre queden en la
+interfaz solo los personajes cuyo nombre contiene las letras escritas. Además, los personajes están **ordenados alfabéticamente**.
 
-### `npm run eject`
+### Estructura de componentes
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Empleamos una estructura basada en el concepto **Atomic Web Design**, que permite descomponer problemas para darles una mejor solución, creando, así, un sistema de componentes.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Este concepto, acuñado por el (Brad Frost)[https://bradfrost.com/blog/post/atomic-web-design/], permite descomponer la aplición en **5 grados de componentes**: Átomos, Moléculas, Organismos, Templates y Páginas.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Detalle del personaje
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Al hacer clic sobre la tarjeta de un personaje, su informaciónaparecerá a pantalla completa. Para hacer esto usaremos rutas y **React router**. En la pantalla de detalleaparecerá además de la foto, nombre y especie, el planeta de origen, el número de episodios en los queaparece y si está vivo o muerto.
 
-## Learn More
+### URL compartible
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+La URL del detalle de personaje debe ser compartible, es decir, que si visitamos esa URL directamente en el navegador se vea el detalle del personaje.
+En el caso de que el usuario navegue a una URL inexistente, debemos mostrar un mensaje del tipo "El personaje que buscas no existe".

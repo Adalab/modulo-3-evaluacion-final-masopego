@@ -6,16 +6,21 @@ $display: 1280px;
 /* FONT SIZES */
 
 $font-regular: 16;
-$font-small: rem(14);
-$font-extra-medium: rem(18);
-$font-medium: rem(20);
+$font-extra-medium: 20px;
+$font-medium: 32px;
+$font-large: 40px;
+$font-extra-big: 150px;
 
 /* FONT FAMILY */
+
+$font-primary: "Montserrat", sans-serif;
+$font-secondary: "Merriweather", serif;
 
 /* COLORS */
 
 $color-primary: #a9cc55;
 $color-secondary: #1f8e45;
+$color-tertiary: #1f568e40;
 $color-light: #ffffff;
 $color-dark: #000000;
 $color-shadow: 0px 0px 57px 13px rgba(230, 255, 0, 1);

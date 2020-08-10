@@ -9,11 +9,11 @@
 
   &--text {
     color: $color-light;
-    font-family: sans-serif;
-    font-size: 20px;
+    font-family: $font-primary;
+    font-size: $font-extra-medium;
 
     & span {
-      font-size: 40px;
+      font-size: $font-large;
     }
   }
 }
